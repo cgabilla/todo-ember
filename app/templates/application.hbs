@@ -1,5 +1,27 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="container">
+  <h1>Django-DRF-Ember Dev Demo
+    {{#if session.isAuthenticated}}
+      (<a {{action 'invalidateSession'}}>{{fa-icon "sign-out" fixedWidth=true}} Logout</a>)
+    {{else}} 
+      ({{#link-to 'login'}}{{fa-icon "sign-in" fixedWidth=true}}Login{{/link-to}})
+    {{/if}}
+  </h1>
 
-{{outlet}}
+  <br>
+  <br>
+
+  <ul class="nav nav-pills">
+    <li role="presentation" class="">
+      {{#link-to "todos.index" }}
+        {{fa-icon "list" fixedWidth=true}} Todos
+      {{/link-to}}      
+    </li>
+    <li role="presentation" class="">
+      {{#link-to "invitations" }}
+        {{fa-icon "paper-plane" fixedWidth=true}} Invitations
+      {{/link-to}}      
+    </li>
+  </ul>
+
+  {{outlet}}
+</div>

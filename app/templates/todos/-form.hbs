@@ -1,0 +1,31 @@
+<form {{action "save" on="submit"}}>
+  <div class="form-group row">
+    <label for="label" class="col-sm-2 col-form-label">Label</label>
+    <div class="col-sm-6">
+      {{input type="text" class="form-control" id="label" placeholder="Label" value=model.label}}
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="text" class="col-sm-2 col-form-label">Text</label>
+    <div class="col-sm-6">
+      {{input type="text" class="form-control" id="text" placeholder="Text" value=model.text}}
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">&nbsp;</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        {{input type="checkbox" class="form-check-input" id="done" checked=model.done}}
+        <label class="form-check-label" for="done">
+          Done
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">&nbsp;</div>
+    <div class="col-sm-10">
+    <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>

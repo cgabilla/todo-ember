@@ -1,0 +1,65 @@
+<br>
+<p>
+  {{#link-to "todos.new" }}
+    {{fa-icon "file" fixedWidth=true}} New
+  {{/link-to}}
+</p>
+
+{{#if model.length}}
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Label
+        </th>
+        <th>
+          Text
+        </th>
+        <th class="text-center">
+          Done
+        </th>
+        <th colspan="3" class="text-center">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |todo|}}
+        <tr>
+          <td>
+            {{todo.label}}
+          </td>
+          <td>
+            {{todo.text}}
+          </td>
+          <td  class="text-center">
+            {{#if todo.done}}
+              <span class="label label-success">Done</span>
+            {{else}}
+              <span class="label label-warning">Pending</span>
+            {{/if}}
+          </td>
+          <td>
+            {{#link-to "todos.edit" todo}}
+              {{fa-icon "pencil" fixedWidth=true}} Edit
+            {{/link-to}}
+          </td>
+          <td>
+            {{#link-to "todos.show" todo}}
+              {{fa-icon "eye" fixedWidth=true}} Show
+            {{/link-to}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" todo}}>{{fa-icon "trash-o" fixedWidth=true}} Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{else}}
+  <p id="blankslate">
+    No Todos found
+  </p>
+{{/if}}

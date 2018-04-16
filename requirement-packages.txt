@@ -1,0 +1,7 @@
+yoember packages added
+
+Add Bootstrap and Sass to Ember.js App
+
+$ ember install ember-cli-sass
+$ ember install ember-cli-bootstrap-sassy
+$ ember install ember-font-awesome

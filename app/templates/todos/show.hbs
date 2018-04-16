@@ -1,0 +1,16 @@
+<p>
+  {{#link-to "todos.index" }} {{fa-icon "list" fixedWidth=true}} List {{/link-to}}
+</p>
+<h4>Todo Details</h4>
+<p>
+  <span>{{model.label}}</span>
+  <small><span>{{model.text}}</span></small>
+</p>
+
+<p>
+  {{#if model.done}}
+    <span class="label label-success">Done</span>
+  {{else}}
+    <span class="label label-warning">Pending</span>
+  {{/if}}
+</p>
